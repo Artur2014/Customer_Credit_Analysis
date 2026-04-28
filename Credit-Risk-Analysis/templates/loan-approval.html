@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credito - Loan Approval</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #dfdfdf;
+      --card: #adadad;
+      --accent: #4f46e5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Inter, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      /* background: linear-gradient(135deg, #0f172a, #1e1b4b); */
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(198, 210, 235, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      font-size: 28px;
+      color: black;
+
+    }
+
+    p {
+      color: black;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    label {
+      font-size: 13px;
+      color: black;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #e6e6e6;
+      color: white;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .radio {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #b3b3b3;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    button {
+      padding: 14px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      background: #4338ca;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+.header {
+  display: flex;
+  gap: 30px;
+    padding: 20px 100px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header a {
+    color: rgba(30, 30, 30, 1);
+    height: auto;
+    font-size: 18px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.lis {
+   display: flex;
+  gap: 30px;
+}
+  </style>
+</head>
+
+<body>
+<div class="header">
+  <div>
+       <img alt="Vector5242" src="{{ url_for('static', filename='playground_assets/vector5242-uu5l.svg') }}"
+            class="about-vector07" />
+  </div>
+  <div class="lis">
+
+
+  <a href="/" class="contact-text084">
+    <span>Home</span>
+  </a>
+    <a href="./loan-approval" class="contact-text082">
+    <span>Loan Approval</span>
+  </a>
+
+  <a href="./about" class="contact-text086">
+    <span>About</span>
+  </a>
+
+  <a href="./contact" class="contact-text088">
+    <span>Contact</span>
+  </a>
+
+  <a href="https://github.com/Artur2014/CustomerCreditHistoryAnalysisForCreditRiskPrediction" 
+     class="contact-text090">
+    <span>Source Code</span>
+  </a>
+</div>
+</div>
+<div class="container">
+
+  <div class="card">
+
+    <h1>Loan Approval</h1>
+    <p>Fill your details for accurate credit risk analysis</p>
+
+    <form action="{{ url_for('about') }}" method="POST">
+
+      <div class="grid">
+        <div>
+          <label>First Name</label>
+          <input name="firstName" placeholder="John" required>
+        </div>
+
+        <div>
+          <label>Last Name</label>
+          <input name="lastName" placeholder="Doe" required>
+        </div>
+
+        <div>
+          <label>Total Income</label>
+          <input type="number" name="totalIncome" placeholder="">
+        </div>
+
+        <div>
+          <label>Loan Amount</label>
+          <input type="number" name="loanAmount" placeholder="">
+        </div>
+
+        <div>
+          <label>Loan Term</label>
+          <input type="number" name="amountTerm" placeholder="360">
+        </div>
+
+        <div>
+          <label>Dependents</label>
+          <select name="dependants">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label>Gender</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="gender" value="1"> Male</label>
+          <label class="radio"><input type="radio" name="gender" value="0"> Female</label>
+          <label class="radio"><input type="radio" name="gender" value="2"> Other</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Married</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="married" value="1"> Yes</label>
+          <label class="radio"><input type="radio" name="married" value="0"> No</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Education</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="education" value="1"> Graduate</label>
+          <label class="radio"><input type="radio" name="education" value="0"> Non Graduate</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Self Employed</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="selfEmployed" value="1"> Yes</label>
+          <label class="radio"><input type="radio" name="selfEmployed" value="0"> No</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Credit History</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="credit" value="1"> Good</label>
+          <label class="radio"><input type="radio" name="credit" value="0"> Bad</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Property Area</label>
+        <div class="radio-group">
+          <label class="radio"><input type="radio" name="parea" value="0"> Rural</label>
+          <label class="radio"><input type="radio" name="parea" value="1"> Semi Urban</label>
+          <label class="radio"><input type="radio" name="parea" value="2"> Urban</label>
+        </div>
+      </div>
+
+      <button type="submit">Submit Application</button>
+
+    </form>
+
+    <div class="footer">
+      © 2026 • Credit Risk Modeling System
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
