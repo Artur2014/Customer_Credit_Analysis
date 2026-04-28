@@ -26,7 +26,7 @@ In this project, we have demonstrated the use of XGBoost for credit risk analysi
 # Installation:
 1. Clone the repository to your local machine:
 ```
-git clone https://github.com/SannketNikam/Credit-Risk-Analysis.git
+git clone https://github.com/Artur2014/Customer_Credit_Analysis.git
 ```
 
 2. Install the 'requirements.txt':
